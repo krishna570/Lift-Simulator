@@ -1,0 +1,20 @@
+{
+  "name": "lift-controller-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Lift (Elevator) Controller Simulator - Node.js backend + live dashboard UI",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "selftest": "node scripts/selftest.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

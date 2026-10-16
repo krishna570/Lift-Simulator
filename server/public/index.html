@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lift (Elevator) Controller Simulator</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231668dc'/%3E%3Cpath d='M11 9l3-4 3 4zM11 23l3 4 3-4z' fill='%23fff'/%3E%3Crect x='9' y='13' width='14' height='6' rx='2' fill='%23fff' opacity='.85'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6.5 10.5 3 13 6.5z" fill="currentColor" /><path d="M8 17.5 10.5 21 13 17.5z" fill="currentColor" /><rect x="14" y="6" width="6" height="12" rx="1.6" fill="currentColor" opacity=".75" /></svg>
+          </div>
+          <div class="brand-text">
+            <strong>Lift Controller Simulator</strong>
+            <span>Smart Lifts &middot; Smart Buildings</span>
+          </div>
+        </div>
+
+        <nav class="nav" id="nav"></nav>
+
+        <div class="sidebar-foot">
+          <div class="foot-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V7l7-4 7 4v14z" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M8 10h2M14 10h2M8 14h2M14 14h2M8 18h2M14 18h2" stroke="currentColor" stroke-width="1.6" /></svg>
+          </div>
+          <p>Efficient Lifts.<br />Smooth Movement.<br />Happy People.</p>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-btn menu-btn" id="menu-toggle" aria-label="Toggle navigation">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" /></svg>
+            </button>
+            <div>
+              <h1 id="page-title">Dashboard</h1>
+              <p id="page-subtitle">Welcome back! Here's what's happening in your building.</p>
+            </div>
+          </div>
+          <div class="topbar-right">
+            <div class="clock">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M12 7v5.5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+              <div>
+                <strong id="sim-clock">10:00 AM</strong>
+                <span id="sim-date">16 Oct 2026</span>
+              </div>
+            </div>
+            <span class="pill pill-live" id="status-pill"><i></i><span>System Running</span></span>
+            <button class="icon-btn" id="pause-btn" title="Pause / resume the simulation">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" /></svg>
+            </button>
+          </div>
+        </header>
+
+        <main class="content" id="view"></main>
+      </div>
+    </div>
+
+    <div class="toast-stack" id="toasts"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
